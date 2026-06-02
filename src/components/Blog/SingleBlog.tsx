@@ -1,6 +1,5 @@
 import { Blog } from "@/types/blog";
 import Image from "next/image";
-import Link from "next/link";
 import { AuroraText } from "@/components/ui/aurora-text";
 
 const SingleBlog = ({ blog }: { blog: Blog }) => {
@@ -12,18 +11,13 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
           <Image src={image} alt="image" fill />
         </div>
         <div className="p-6 sm:p-8 md:px-6 md:py-8 lg:p-8 xl:px-5 xl:py-8 2xl:p-8">
-          <h3>
-            <Link
-              href="/blog-details"
-              className="hover:text-primary dark:hover:text-primary mb-4 block text-xl font-bold text-black sm:text-2xl dark:text-white"
+          <h3 className="mb-4 block text-xl font-bold text-black sm:text-2xl dark:text-white">
+            <AuroraText
+              colors={["#ff2975", "#7928CA", "#0070F3", "#38bdf8"]}
+              speed={1.2}
             >
-              <AuroraText
-                colors={["#ff2975", "#7928CA", "#0070F3", "#38bdf8"]}
-                speed={1.2}
-              >
-                {title}
-              </AuroraText>
-            </Link>
+              {title}
+            </AuroraText>
           </h3>
           <p className="border-body-color/10 text-body-color text-base font-medium dark:border-white/10">
             {paragraph}
